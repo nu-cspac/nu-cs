@@ -24,8 +24,6 @@ Below are several guides with helpful tips about using zoom effectively. Below e
 * The suggested protocol enables queueing of questions.
 
 
-
-
 ## General Notes
 * TAs should set up their own meetings so they can be the host. This allows them to customize the settings for the meeting.
 * [Setup persistent zoom URL for OH](https://support.zoom.us/hc/en-us/articles/201362843-Personal-meeting-ID-PMI-and-personal-link)
@@ -85,6 +83,9 @@ We believe that no single one of these methods works well for all students, so w
 ### Method: Recitation (Prepared TA Lecture)
 #### Suggestions for TAs
 * Have audio and video muted by default for students entering meetings
+* Don't use a waiting room for lectures. As people trickle in late, you'll have to hit "Admit" over and over while you're trying to lecture. 
+* Keep the chat visible while you are lecturing. Students sometimes feel more comfortable asking questions in chat then interrupting. 
+* Set up a clear protocol at the beginning of class for how students can interact with the instructor, ask questions, etc.
 #### Suggestions for Students to follow
 * Keep your audio and video muted at all times, unless you’re asking a question.
 * To ask a questions, use the “raise hand” feature of zoom. Raising a hand will send a pop-up to the meeting host.
