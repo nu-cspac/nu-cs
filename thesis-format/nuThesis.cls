@@ -40,6 +40,7 @@
 \RequirePackage[section]{placeins}
 \RequirePackage{amsmath,amssymb,amsthm}
 \RequirePackage{lineno}
+% \RequirePackage{parskip}
 
 % toggles and options
 \newtoggle{nuThesis@nodoi}
@@ -80,13 +81,17 @@
 
 % Chapter style
 \RequirePackage{titlesec}
-\titlespacing{\chapter}{0pt}{-0.75in}{0.5in}
-\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename~\thechapter}{0pt}{\Huge}
+\titlespacing{\chapter}{0pt}{-0.75in}{0.25in}
+\titleformat{\chapter}[hang]{\normalfont\Huge\bfseries}{\thechapter}{5mm}{\LARGE}{}
 
 \renewcommand{\chapterautorefname}{Chapter}
 \renewcommand{\sectionautorefname}{Section}
 \renewcommand{\subsectionautorefname}{Section}
 \renewcommand{\subsubsectionautorefname}{Section}
+
+\setlength{\parskip}{5mm}
+\setlength{\parindent}{15pt}
+
 
 % title page
 \renewcommand{\maketitle}{%
