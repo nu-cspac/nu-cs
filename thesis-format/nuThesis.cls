@@ -40,7 +40,7 @@
 \RequirePackage[section]{placeins}
 \RequirePackage{amsmath,amssymb,amsthm}
 \RequirePackage{lineno}
-% \RequirePackage{parskip}
+\RequirePackage{parskip}
 
 % toggles and options
 \newtoggle{nuThesis@nodoi}
