@@ -1,0 +1,94 @@
+%%%%%%%%%%%%%%% Acknowledgement %%%%%%%%%%%%%%
+% This Latex template is passed along
+% Northwestern CS PhD students
+% Brian Suchy, Erico Deiana, and Lukas Lazarek
+% previously contributed to this template.
+% The nuThesis.cls and main.tex file was 
+% initially created by Hyeok Kim on Feb, 2024.
+% Note: This template has not been approved by
+% Northwestern Library nor TGS. 
+% Refer to the below web site for the guide:
+% https://www.tgs.northwestern.edu/academic-policies-procedures/dissertation-publication/dissertation-formatting-requirements/
+% ------------------------------------ Updates
+% - Initial creation (Feb 16, 2024)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \documentclass[]{nuThesis} % default mode, with ieee citation style and DOIs 
+% \documentclass[review]{nuThesis} % review mode, with the ieee citation style and DOIs 
+% \documentclass[ieee,nodoi]{nuThesis} % default mode with the ieee citation style with NO DOIs
+% \documentclass[acmauthoryear,review]{nuThesis} % review mode with the acm-author-year citation style with DOIs
+% \documentclass[acmauthoryear,nodoi]{nuThesis}  % default mode with the acm-author-year citation style with NO DOIs
+\documentclass[manualBib]{nuThesis} % review mode with the mnual citation style with DOIs
+
+% options
+% nodoi: don't use doi in the reference
+% acmauthoryear: use acm-author-year citation (Lazarek et al., 2019)
+% ieee: use ieee citation ([1]) -- this is default
+% manualBib: use manual citaiton style. Then you have to define the citation style by yourself. nodoi option can work with it.
+% review: line numbers
+
+% your information all goes here
+\title{The Title of Your Dissertation}
+\author{Your Name}
+\newcommand{\conferredMonth}{June}
+\newcommand{\conferredYear}{2024}
+\newcommand{\field}{Computer Science}
+
+% math expressions (comment out if you don't want)
+\input{aux/maths}
+
+\begin{document}
+
+\maketitle
+
+% if you don't want to declare copyright, comment OUT the previous line.
+\copyright
+
+% abstract
+\begin{abstract}
+\noindent Your abstract... \lipsum[1] 
+\end{abstract}
+
+% acknowledgement
+\begin{ack}
+\noindent Your acknowledgement... \lipsum[1]
+\end{ack}
+
+% preface
+\begin{preface}
+\noindent Your preface... \lipsum[1]
+\end{preface}
+
+% if you want to include list of abbreviation and glossary, then comment out the following lines and edit them
+\useCustomTOCItem{List of Abbreviations}{aux/abbreviations}
+\useCustomTOCItem{Glossary}{aux/glossary}
+\useCustomTOCItem{Dedication}{aux/dedication}
+
+% Table of Contents
+\insertToc{}
+% List of figures (comment out if you don't want)
+\insertLof{}
+% List of tables (comment out if you don't want)
+\insertLot{}
+
+% Body
+\input{sections/sample}
+
+% Bibliography
+\insertBib{}
+
+% Appendix
+\appendix 
+% Your appendices go here.
+\input{sections/sample_appendix}
+\unappendix
+% Nothing but your vita should be here.
+
+% Your vita goes below. 
+% The format doesn't really matter.
+% If you don't want to include your Vita, just comment out the below line.
+\useCustomTOCItem{Vita}{aux/vita}
+% The first option is the title of your Vita section (it appears in the table of contents)
+% The second option is the file name of your vita.
+
+\end{document}
