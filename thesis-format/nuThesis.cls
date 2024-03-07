@@ -81,8 +81,12 @@
 
 % Chapter style
 \RequirePackage{titlesec}
-\titlespacing{\chapter}{0pt}{-0.75in}{0.25in}
-\titleformat{\chapter}[hang]{\normalfont\Huge\bfseries}{\thechapter}{5mm}{\LARGE}{}
+\setcounter{secnumdepth}{4} % allows subsubsection
+
+\titlespacing{\chapter}{0pt}{-0.75in}{0.25in} % Comment out this if you want to have some space around the chapter title
+% toggle between the below two lines for the chapter title styles
+\titleformat{\chapter}[hang]{\normalfont\Huge\bfseries}{\thechapter}{5mm}{\LARGE}{} % in one line, e.g., 1 Introduction
+%\titleformat{\chapter}[display]{\fontseries{sb}\Large}{Chapter \thechapter}{-9mm}{\fontseries{sb}\LARGE}{} % in two lines, e.g., Chapter 1 \\ Introduction
 
 \renewcommand{\chapterautorefname}{Chapter}
 \renewcommand{\sectionautorefname}{Section}
