@@ -12,7 +12,7 @@
 \RequirePackage{etoolbox}
 \RequirePackage[dvipsnames,table]{xcolor}
 \RequirePackage{doi}
-\RequirePackage[letterpaper, margin=1in, margintop=0.75in includefoot, includehead, heightrounded]{geometry}
+\RequirePackage[letterpaper, margin=1in, top=0.75in, includefoot, includehead, heightrounded]{geometry}
 \setlength{\headheight}{0.25in}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[sfdefault]{sourcesanspro}
@@ -69,7 +69,19 @@
 \ProcessOptions
 \RequirePackage{biblatex}
 
-% font size
+% Section/appendix numbering
+\newcounter{savechapter}
+\newcounter{apdxchapter}
+\renewcommand\appendix{\par
+  \setcounter{savechapter}{\value{chapter}}%
+  \setcounter{chapter}{\value{apdxchapter}}%
+  \setcounter{section}{0}%
+  \gdef\thechapter{\@Alph\c@chapter}}
+\newcommand\unappendix{\par
+  \setcounter{apdxchapter}{\value{chapter}}%
+  \setcounter{chapter}{\value{savechapter}}%
+  \setcounter{section}{0}%
+  \gdef\thechapter{\@arabic\c@chapter}}
 
 % page numbering
 \RequirePackage{fancyhdr}
@@ -91,7 +103,7 @@
 }
 
 % Chapter/Section styles
-\RequirePackage{titlesec}
+\RequirePackage[raggedright]{titlesec}
 \setcounter{secnumdepth}{4}
 
 % \titlespacing{\chapter}{0pt}{-0.75in}{0.25in}
@@ -207,7 +219,7 @@ Preface\\
 \newcommand{\insertLof}{
 \clearpage
 \begin{singlespace}
-\setlength\cftbeforefigskip{\baselineskip}
+% \setlength\cftbeforefigskip{\baselineskip}
 \currentpdfbookmark{List of Figures}{LOF}
 \listoffigures
 \addcontentsline{toc}{chapter}{List of Figures}
@@ -218,7 +230,7 @@ Preface\\
 \newcommand{\insertLot}{
 \clearpage
 \begin{singlespace}
-\setlength\cftbeforefigskip{\baselineskip}
+% \setlength\cftbeforefigskip{\baselineskip}
 \currentpdfbookmark{List of Tables}{LOT}
 \listoftables
 \addcontentsline{toc}{chapter}{List of Tables}
