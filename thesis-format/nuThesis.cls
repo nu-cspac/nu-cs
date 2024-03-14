@@ -10,11 +10,13 @@
 % packages
 \RequirePackage[doublespacing]{setspace}
 \RequirePackage{etoolbox}
-\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage[dvipsnames,table]{xcolor}
 \RequirePackage{doi}
 \RequirePackage[letterpaper, margin=1in, margintop=0.75in includefoot, includehead, heightrounded]{geometry}
 \setlength{\headheight}{0.25in}
 \RequirePackage[T1]{fontenc}
+\RequirePackage[sfdefault]{sourcesanspro}
+\RequirePackage[default,regular,semibold,bold]{sourceserifpro}
 \RequirePackage{graphicx}
 \RequirePackage[vflt]{floatflt}
 \RequirePackage{wrapfig}
@@ -41,6 +43,7 @@
 \RequirePackage{amsmath,amssymb,amsthm}
 \RequirePackage{lineno}
 \RequirePackage{parskip}
+\usepackage[font=small]{caption}
 
 % toggles and options
 \newtoggle{nuThesis@nodoi}
@@ -66,6 +69,8 @@
 \ProcessOptions
 \RequirePackage{biblatex}
 
+% font size
+
 % page numbering
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
@@ -79,14 +84,26 @@
                     \@afterindentfalse
                     \secdef\@chapter\@schapter}
 
-% Chapter style
-\RequirePackage{titlesec}
-\setcounter{secnumdepth}{4} % allows subsubsection
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+  {-3.25ex \@plus -1ex \@minus -0.2ex}%
+  {0.01pt}%
+  {\bfseries}%
+}
 
-\titlespacing{\chapter}{0pt}{-0.75in}{0.25in} % Comment out this if you want to have some space around the chapter title
-% toggle between the below two lines for the chapter title styles
-\titleformat{\chapter}[hang]{\normalfont\Huge\bfseries}{\thechapter}{5mm}{\LARGE}{} % in one line, e.g., 1 Introduction
-%\titleformat{\chapter}[display]{\fontseries{sb}\Large}{Chapter \thechapter}{-9mm}{\fontseries{sb}\LARGE}{} % in two lines, e.g., Chapter 1 \\ Introduction
+% Chapter/Section styles
+\RequirePackage{titlesec}
+\setcounter{secnumdepth}{4}
+
+% \titlespacing{\chapter}{0pt}{-0.75in}{0.25in}
+\titleformat{\chapter}[display]{\fontseries{sb}\Large\setstretch{1.15}}{Chapter \thechapter}{-1mm}{\fontseries{sb}\LARGE}{}
+
+\titleformat{\section}[hang]{\fontseries{sb}\Large}{\thesection}{5mm}{\fontseries{sb}\Large}{}
+
+\titleformat{\subsection}[hang]{\fontseries{sb}\large}{\thesubsection}{5mm}{\fontseries{sb}\large}{}
+
+\titleformat{\subsubsection}[hang]{\fontseries{sb}\normalsize}{\thesubsubsection}{5mm}{\fontseries{sb}\normalsize}{}
+
+\titleformat{\paragraph}[hang]{\fontseries{sb}\normalsize}{}{0mm}{\fontseries{sb}\normalsize}{}
 
 \renewcommand{\chapterautorefname}{Chapter}
 \renewcommand{\sectionautorefname}{Section}
@@ -94,8 +111,9 @@
 \renewcommand{\subsubsectionautorefname}{Section}
 
 \setlength{\parskip}{5mm}
-\setlength{\parindent}{15pt}
+\setlength{\parindent}{30pt}
 
+\renewcommand{\textbf}[1]{{\fontseries{sb}\selectfont #1}}
 
 % title page
 \renewcommand{\maketitle}{%
