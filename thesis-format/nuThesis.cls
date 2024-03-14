@@ -103,17 +103,16 @@
 }
 
 % Chapter/Section styles
-\RequirePackage[raggedright]{titlesec}
+\RequirePackage{titlesec}
 \setcounter{secnumdepth}{4}
 
-% \titlespacing{\chapter}{0pt}{-0.75in}{0.25in}
-\titleformat{\chapter}[display]{\fontseries{sb}\Large\setstretch{1.15}}{Chapter \thechapter}{-1mm}{\fontseries{sb}\LARGE}{}
+\titleformat{\chapter}[display]{\fontseries{sb}\Large\setstretch{1.15}}{Chapter \thechapter}{-1mm}{\fontseries{sb}\LARGE\raggedright}{}
 
-\titleformat{\section}[hang]{\fontseries{sb}\Large}{\thesection}{5mm}{\fontseries{sb}\Large}{}
+\titleformat{\section}[hang]{\fontseries{sb}\Large}{\thesection}{5mm}{\fontseries{sb}\Large\raggedright}{}
 
-\titleformat{\subsection}[hang]{\fontseries{sb}\large}{\thesubsection}{5mm}{\fontseries{sb}\large}{}
+\titleformat{\subsection}[hang]{\fontseries{sb}\large}{\thesubsection}{5mm}{\fontseries{sb}\large\raggedright}{}
 
-\titleformat{\subsubsection}[hang]{\fontseries{sb}\normalsize}{\thesubsubsection}{5mm}{\fontseries{sb}\normalsize}{}
+\titleformat{\subsubsection}[hang]{\fontseries{sb}\normalsize}{\thesubsubsection}{5mm}{\fontseries{sb}\normalsize\raggedright}{}
 
 \titleformat{\paragraph}[hang]{\fontseries{sb}\normalsize}{}{0mm}{\fontseries{sb}\normalsize}{}
 
