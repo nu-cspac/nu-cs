@@ -76,12 +76,14 @@
   \setcounter{savechapter}{\value{chapter}}%
   \setcounter{chapter}{\value{apdxchapter}}%
   \setcounter{section}{0}%
-  \gdef\thechapter{\@Alph\c@chapter}}
+  \gdef\thechapter{\@Alph\c@chapter}
+  \titleformat{\chapter}[display]{\fontseries{sb}\Large\setstretch{1.15}}{Appendix \thechapter}{-1mm}{\fontseries{sb}\LARGE\raggedright}{}}
 \newcommand\unappendix{\par
   \setcounter{apdxchapter}{\value{chapter}}%
   \setcounter{chapter}{\value{savechapter}}%
   \setcounter{section}{0}%
-  \gdef\thechapter{\@arabic\c@chapter}}
+  \gdef\thechapter{\@arabic\c@chapter}
+  \titleformat{\chapter}[display]{\fontseries{sb}\Large\setstretch{1.15}}{Chapter \thechapter}{-1mm}{\fontseries{sb}\LARGE\raggedright}{}}
 
 % page numbering
 \RequirePackage{fancyhdr}
