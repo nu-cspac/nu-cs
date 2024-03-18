@@ -178,28 +178,29 @@ All Rights Reserved
 % abstract
 \renewenvironment{abstract}{
 \clearpage
+\addcontentsline{toc}{chapter}{Abstract}
 \currentpdfbookmark{Abstract}{abstract}  %add PDF bookmark for this page
 \begin{centering}
 Abstract\\
 \end{centering}
-\addcontentsline{toc}{chapter}{Abstract}
 }
 {\endlist}
 
 % Acknowledgment
 \newenvironment{ack}{
 \clearpage
+\addcontentsline{toc}{chapter}{Acknowledgment}
 \currentpdfbookmark{Acknowledgment}{ack}  %add PDF bookmark for this page
 \begin{centering}
 Acknowledgment\\
 \end{centering}
-\addcontentsline{toc}{chapter}{Acknowledgment}
 }
 {\endlist}
 
 % Acknowledgment
 \newenvironment{preface}{
 \clearpage
+\addcontentsline{toc}{chapter}{Preface}
 \currentpdfbookmark{Preface}{preface}  %add PDF bookmark for this page
 \begin{centering}
 Preface\\
@@ -208,33 +209,32 @@ Preface\\
 {\endlist}
 
 % Table of Contents
+\setcounter{tocdepth}{1}
 \renewcommand\contentsname{Table of Contents}
 \newcommand{\insertToc}{
 \clearpage
-\currentpdfbookmark{Table of Contents}{TOC}
 \addcontentsline{toc}{chapter}{Table of Contents}
+\currentpdfbookmark{Table of Contents}{TOC}
 \tableofcontents
 }
 
 % List of Figures
 \newcommand{\insertLof}{
 \clearpage
+\addcontentsline{toc}{chapter}{List of Figures}
 \begin{singlespace}
-% \setlength\cftbeforefigskip{\baselineskip}
 \currentpdfbookmark{List of Figures}{LOF}
 \listoffigures
-\addcontentsline{toc}{chapter}{List of Figures}
 \end{singlespace}
 }
 
 % List of Figures
 \newcommand{\insertLot}{
 \clearpage
+\addcontentsline{toc}{chapter}{List of Tables}
 \begin{singlespace}
-% \setlength\cftbeforefigskip{\baselineskip}
 \currentpdfbookmark{List of Tables}{LOT}
 \listoftables
-\addcontentsline{toc}{chapter}{List of Tables}
 \end{singlespace}
 }
 
@@ -246,11 +246,11 @@ Preface\\
 }{}
 \newcommand{\insertBib}[1]{
 \clearpage
+\addcontentsline{toc}{chapter}{References}
 \begin{singlespace}
 \setlength\bibitemsep{\baselineskip} 
 \printbibliography[title={References}]
 \end{singlespace}
-\addcontentsline{toc}{chapter}{References}  
 }
 
 % line numboers
