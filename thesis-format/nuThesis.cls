@@ -43,7 +43,14 @@
 \RequirePackage{amsmath,amssymb,amsthm}
 \RequirePackage{lineno}
 \RequirePackage{parskip}
-\usepackage[font=small]{caption}
+\RequirePackage{xurl}
+\RequirePackage{ragged2e}
+\RequirePackage{array}
+\RequirePackage{makecell}
+\RequirePackage{color}
+\RequirePackage{pdflscape}
+\RequirePackage{annotate-equations}
+\RequirePackage[font=small]{caption}
 
 % toggles and options
 \newtoggle{nuThesis@nodoi}
@@ -69,22 +76,6 @@
 \ProcessOptions
 \RequirePackage{biblatex}
 
-% Section/appendix numbering
-\newcounter{savechapter}
-\newcounter{apdxchapter}
-\renewcommand\appendix{\par
-  \setcounter{savechapter}{\value{chapter}}%
-  \setcounter{chapter}{\value{apdxchapter}}%
-  \setcounter{section}{0}%
-  \gdef\thechapter{\@Alph\c@chapter}
-  \titleformat{\chapter}[display]{\fontseries{sb}\Large\setstretch{1.15}}{Appendix \thechapter}{-1mm}{\fontseries{sb}\LARGE\raggedright}{}}
-\newcommand\unappendix{\par
-  \setcounter{apdxchapter}{\value{chapter}}%
-  \setcounter{chapter}{\value{savechapter}}%
-  \setcounter{section}{0}%
-  \gdef\thechapter{\@arabic\c@chapter}
-  \titleformat{\chapter}[display]{\fontseries{sb}\Large\setstretch{1.15}}{Chapter \thechapter}{-1mm}{\fontseries{sb}\LARGE\raggedright}{}}
-
 % page numbering
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
@@ -108,7 +99,7 @@
 \RequirePackage{titlesec}
 \setcounter{secnumdepth}{4}
 
-\titleformat{\chapter}[display]{\fontseries{sb}\Large\setstretch{1.15}}{Chapter \thechapter}{-1mm}{\fontseries{sb}\LARGE\raggedright}{}
+\titleformat{\chapter}[display]{\fontseries{sb}\Large\setstretch{1.15}}{\chaptertitlename~\thechapter}{-1mm}{\fontseries{sb}\LARGE\raggedright}{}
 
 \titleformat{\section}[hang]{\fontseries{sb}\Large}{\thesection}{5mm}{\fontseries{sb}\Large\raggedright}{}
 
